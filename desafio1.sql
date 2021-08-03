@@ -40,6 +40,7 @@ FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 CREATE TABLE usuario_segue_artista(
 usuario_id INT,
 artista_id INT,
+CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) ENGINE = InnoDB;
@@ -47,6 +48,7 @@ FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 CREATE TABLE usuario_historico(
 usuario_id INT,
 cancao_id INT,
+CONSTRAINT PRIMARY KEY(usuario_id, cancao_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 ) ENGINE = InnoDB;
